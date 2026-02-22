@@ -11,15 +11,15 @@
 ─────────────────────────────────────────────────────────────────────────────*/
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --c-bg:      #07090f;
-  --c-panel:   #090d1a;
-  --c-card:    #0c1120;
-  --c-input:   #0f1627;
+  --c-bg:      #0d0d0d;
+  --c-panel:   #131313;
+  --c-card:    #191919;
+  --c-input:   #1e1e1e;
   --c-border:  rgba(255,255,255,.07);
   --c-border2: rgba(255,255,255,.13);
-  --c-text:    #dde4ef;
-  --c-dim:     #3d5070;
-  --c-faint:   #1a2540;
+  --c-text:    #dedede;
+  --c-dim:     #585858;
+  --c-faint:   #2e2e2e;
   --font:      'IBM Plex Mono', monospace;
 }
 html, body { height: 100%; overflow: hidden; background: var(--c-bg); color: var(--c-text); font-family: var(--font); }
@@ -27,7 +27,7 @@ button { font-family: var(--font); cursor: pointer; }
 input, select { font-family: var(--font); }
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #1e2d45; border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: #282828; border-radius: 2px; }
 
 /*─────────────────────────────────────────────────────────────────────────────
   APP SHELL
@@ -43,10 +43,12 @@ input, select { font-family: var(--font); }
   border-right: 1px solid var(--c-border);
   display: flex; flex-direction: column;
 }
-#pal-logo { padding: 14px 12px 10px; border-bottom: 1px solid var(--c-border); }
+#pal-logo { padding: 12px 12px 10px; border-bottom: 1px solid var(--c-border); }
+#logo-icon { margin-bottom: 8px; }
+#logo-icon svg { display: block; }
 #pal-logo .name {
   font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 12px; letter-spacing: .06em;
-  background: linear-gradient(135deg,#38bdf8,#a78bfa);
+  background: linear-gradient(135deg,#d8d8d8,#888888);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 #pal-logo .sub { font-size: 8px; color: var(--c-faint); letter-spacing: .22em; margin-top: 2px; }
@@ -67,7 +69,7 @@ input, select { font-family: var(--font); }
 }
 #btn-settings:hover { color: var(--c-text); border-color: var(--c-border2); }
 #pal-stats { margin-top: 8px; font-size: 9px; color: var(--c-faint); line-height: 2.2; }
-#pal-stats em { color: #38bdf8; font-style: normal; }
+#pal-stats em { color: #a0a0a0; font-style: normal; }
 
 /*─────────────────────────────────────────────────────────────────────────────
   CANVAS
@@ -75,12 +77,12 @@ input, select { font-family: var(--font); }
 #canvas {
   flex: 1; position: relative; overflow: hidden; min-width: 0;
   cursor: grab;
-  background-color: #0a0e1b;
+  background-color: #0f0f0f;
   background-image:
-    linear-gradient(rgba(56,189,248,.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(56,189,248,.06) 1px, transparent 1px),
-    linear-gradient(rgba(56,189,248,.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(56,189,248,.02) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.015) 1px, transparent 1px);
   background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
 }
 #world { position: absolute; transform-origin: 0 0; will-change: transform; }
@@ -175,10 +177,10 @@ input, select { font-family: var(--font); }
   position: absolute; inset: 0; display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 14px; pointer-events: none;
 }
-#empty .et { font-family: 'Orbitron', sans-serif; font-size: 10px; color: #111d30; letter-spacing: .3em; }
+#empty .et { font-family: 'Orbitron', sans-serif; font-size: 10px; color: #222222; letter-spacing: .3em; }
 #empty .ei span { font-size: 22px; margin: 0 7px; }
-#empty .eh { font-size: 10px; color: #111d30; }
-#empty .es { font-size: 9px;  color: #0d1628; }
+#empty .eh { font-size: 10px; color: #222222; }
+#empty .es { font-size: 9px;  color: #1a1a1a; }
 
 /*─────────────────────────────────────────────────────────────────────────────
   RIGHT PANEL
@@ -221,9 +223,9 @@ input, select { font-family: var(--font); }
   font-size: 9px; transition: all .15s;
 }
 #btn-copy { border-color: var(--c-border); color: var(--c-dim); }
-#btn-copy:hover, #btn-copy.ok { border-color: rgba(74,222,128,.4); color: #4ade80; background: rgba(74,222,128,.07); }
-#btn-dl   { border-color: rgba(56,189,248,.3); color: #38bdf8; background: rgba(56,189,248,.07); }
-#btn-dl:hover { background: rgba(56,189,248,.15); }
+#btn-copy:hover, #btn-copy.ok { border-color: rgba(140,200,140,.4); color: #7cb87c; background: rgba(140,200,140,.07); }
+#btn-dl   { border-color: rgba(180,180,180,.3); color: #a0a0a0; background: rgba(180,180,180,.07); }
+#btn-dl:hover { background: rgba(180,180,180,.15); }
 #jout {
   flex: 1; overflow: auto; padding: 12px 14px; margin: 0;
   font-size: 10px; line-height: 1.9; background: transparent;
@@ -232,10 +234,10 @@ input, select { font-family: var(--font); }
   flex-shrink: 0; padding: 6px 14px; border-top: 1px solid rgba(255,255,255,.03);
   display: flex; gap: 14px; font-size: 8px; color: var(--c-faint);
 }
-#jfoot em { color: #38bdf8; font-style: normal; }
+#jfoot em { color: #a0a0a0; font-style: normal; }
 /* JSON colors */
-.jk { color: #38bdf8; } .js { color: #4ade80; } .jn { color: #fb923c; }
-.jb { color: #a78bfa; } .jnu { color: #475569; } .jp { color: var(--c-faint); }
+.jk { color: #a0a0a0; } .js { color: #7cb87c; } .jn { color: #b8895a; }
+.jb { color: #8f82c4; } .jnu { color: #505050; } .jp { color: var(--c-faint); }
 
 /*─────────────────────────────────────────────────────────────────────────────
   SETTINGS MODAL
@@ -247,7 +249,7 @@ input, select { font-family: var(--font); }
 }
 #overlay.open { display: flex; }
 #modal {
-  background: #090e1c; border: 1px solid var(--c-border); border-radius: 14px;
+  background: #111111; border: 1px solid var(--c-border); border-radius: 14px;
   width: min(880px, 96vw); height: 87vh;
   display: flex; flex-direction: column; overflow: hidden;
   box-shadow: 0 30px 90px rgba(0,0,0,.9);
@@ -260,8 +262,8 @@ input, select { font-family: var(--font); }
 #mhead p  { font-size: 9px; color: var(--c-faint); letter-spacing: .14em; margin-top: 2px; }
 #mhead-btns { display: flex; gap: 8px; align-items: center; }
 .m-btn { padding: 6px 14px; border-radius: 5px; border: 1px solid; font-size: 10px; transition: all .15s; }
-#btn-m-export { border-color: rgba(56,189,248,.35); color: #38bdf8; background: rgba(56,189,248,.08); }
-#btn-m-export:hover { background: rgba(56,189,248,.18); }
+#btn-m-export { border-color: rgba(180,180,180,.35); color: #a0a0a0; background: rgba(180,180,180,.08); }
+#btn-m-export:hover { background: rgba(180,180,180,.18); }
 #btn-m-import { border-color: var(--c-border); color: var(--c-dim); background: rgba(255,255,255,.02); }
 #btn-m-import:hover { border-color: var(--c-border2); color: var(--c-text); }
 #btn-m-close  { border-color: var(--c-border); color: var(--c-faint); background: none; font-size: 14px; padding: 4px 10px; }
@@ -272,7 +274,7 @@ input, select { font-family: var(--font); }
   background: none; font-size: 10px; font-weight: 600; letter-spacing: .1em; color: var(--c-faint);
   transition: all .15s;
 }
-.mtab.on { color: var(--c-text); border-bottom-color: #38bdf8; }
+.mtab.on { color: var(--c-text); border-bottom-color: #a0a0a0; }
 #mbody { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
 .mpanel { display: none; flex: 1; overflow: hidden; }
 .mpanel.on { display: flex; }
@@ -345,8 +347,8 @@ input, select { font-family: var(--font); }
 .rbtn { width: 40px; height: 28px; border-radius: 5px; border: none; font-size: 14px; transition: all .12s; }
 .rdash { color: var(--c-faint); font-size: 12px; }
 #rtip {
-  margin-top: 16px; padding: 12px 14px; background: rgba(56,189,248,.04);
-  border: 1px solid rgba(56,189,248,.12); border-radius: 8px; font-size: 10px; color: var(--c-dim); line-height: 1.8;
+  margin-top: 16px; padding: 12px 14px; background: rgba(255,255,255,.03);
+  border: 1px solid rgba(180,180,180,.12); border-radius: 8px; font-size: 10px; color: var(--c-dim); line-height: 1.8;
 }
 
 /* Shared form controls */
@@ -358,8 +360,8 @@ input, select { font-family: var(--font); }
 .fsel { appearance: none; cursor: pointer; }
 .fl { font-size: 9px; color: var(--c-dim); display: block; margin-bottom: 4px; letter-spacing: .05em; }
 .fbtn { padding: 6px 12px; border-radius: 5px; border: 1px solid; font-size: 10px; white-space: nowrap; transition: all .15s; }
-.fp  { border-color: rgba(56,189,248,.35); color: #38bdf8; background: rgba(56,189,248,.08); }
-.fp:hover  { background: rgba(56,189,248,.18); }
+.fp  { border-color: rgba(180,180,180,.35); color: #a0a0a0; background: rgba(180,180,180,.08); }
+.fp:hover  { background: rgba(180,180,180,.18); }
 .fd  { border-color: rgba(239,68,68,.25);  color: #ef4444; background: rgba(239,68,68,.07);  }
 .fd:hover  { background: rgba(239,68,68,.15); }
 .fm  { border-color: var(--c-border); color: var(--c-dim); background: rgba(255,255,255,.02); }
@@ -381,6 +383,21 @@ input, select { font-family: var(--font); }
   <!--════════════ PALETTE ════════════-->
   <div id="palette">
     <div id="pal-logo">
+      <div id="logo-icon"><svg id="app-logo-svg" width="34" height="30" viewBox="0 0 34 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- edges first so nodes render on top -->
+  <line x1="17" y1="9.5" x2="5.5" y2="20.5" stroke="#3c3c3c" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="17" y1="9.5" x2="28.5" y2="20.5" stroke="#3c3c3c" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="9"  y1="25" x2="25"  y2="25" stroke="#303030" stroke-width="1.2" stroke-dasharray="2.5 2" stroke-linecap="round"/>
+  <!-- top node -->
+  <circle cx="17" cy="5.5" r="4" fill="#1e1e1e" stroke="#787878" stroke-width="1.5"/>
+  <circle cx="17" cy="5.5" r="1.5" fill="#909090"/>
+  <!-- bottom-left node -->
+  <circle cx="5.5" cy="24.5" r="4" fill="#1a1a1a" stroke="#565656" stroke-width="1.5"/>
+  <circle cx="5.5" cy="24.5" r="1.5" fill="#686868"/>
+  <!-- bottom-right node -->
+  <circle cx="28.5" cy="24.5" r="4" fill="#1a1a1a" stroke="#565656" stroke-width="1.5"/>
+  <circle cx="28.5" cy="24.5" r="1.5" fill="#686868"/>
+</svg></div>
       <div class="name">TOPOLOGY</div>
       <div class="sub">JSON BUILDER</div>
     </div>
@@ -511,8 +528,8 @@ input, select { font-family: var(--font); }
         <p>Row = parent. Column = allowed child. Click a cell to toggle the rule.</p>
         <div id="rtable-wrap"><table id="rtable"></table></div>
         <div id="rtip">
-          <strong style="color:#38bdf8">Tip:</strong> Export Config → paste into
-          <code style="color:#4ade80">DEFAULT_CONFIG</code> in <code>app.py</code>
+          <strong style="color:#a0a0a0">Tip:</strong> Export Config → paste into
+          <code style="color:#7cb87c">DEFAULT_CONFIG</code> in <code>app.py</code>
           to bake your settings in as permanent defaults.
         </div>
       </div>
@@ -717,7 +734,7 @@ function renderEdges() {
     const tn = nodes.find(n=>n.id===ed.to);
     if (!fn||!tn) continue;
     const fp=outP(fn), tp=inP(tn);
-    const col = cfg.nodeTypes[fn.type]?.color ?? '#38bdf8';
+    const col = cfg.nodeTypes[fn.type]?.color ?? '#a0a0a0';
     const sel = ed.from===selId || ed.to===selId;
     const d   = bz(fp.x,fp.y,tp.x,tp.y);
     const mx  = (fp.x+tp.x)/2, my = (fp.y+tp.y)/2;
@@ -729,11 +746,11 @@ function renderEdges() {
     // glow
     if (sel) g.appendChild(mkSvg('path',{d,fill:'none',stroke:col,'stroke-width':'6',opacity:'.09',filter:'url(#glo)'}));
     // line
-    g.appendChild(mkSvg('path',{d,fill:'none',stroke:sel?col:'rgba(74,222,128,.5)','stroke-width':sel?'1.8':'1.1'}));
+    g.appendChild(mkSvg('path',{d,fill:'none',stroke:sel?col:'rgba(200,200,200,.35)','stroke-width':sel?'1.8':'1.1'}));
     // endpoint dot
-    g.appendChild(mkSvg('circle',{cx:tp.x,cy:tp.y,r:'3.5',fill:sel?col:'rgba(74,222,128,.65)'}));
+    g.appendChild(mkSvg('circle',{cx:tp.x,cy:tp.y,r:'3.5',fill:sel?col:'rgba(200,200,200,.5)'}));
     // delete button (shown on hover via CSS)
-    const db = mkSvg('circle',{cx:mx,cy:my,r:'9',fill:'#07090f',stroke:'rgba(239,68,68,.55)','stroke-width':'1.5',class:'edel'});
+    const db = mkSvg('circle',{cx:mx,cy:my,r:'9',fill:'#0d0d0d',stroke:'rgba(239,68,68,.55)','stroke-width':'1.5',class:'edel'});
     const dt = mkSvg('text',  {x:mx,y:my+3.5,'text-anchor':'middle','font-size':'9',fill:'#ef4444',class:'edel',style:'font-weight:700;font-family:sans-serif'});
     dt.textContent='✕';
     g.appendChild(db); g.appendChild(dt);
@@ -938,7 +955,7 @@ cvs.addEventListener('mousemove', e => {
     const cn = nodes.find(n => n.id === conn.fromId);
     if (cn) {
       const fp = outP(cn), w = s2w(e.clientX, e.clientY);
-      const col = cfg.nodeTypes[cn.type]?.color ?? '#38bdf8';
+      const col = cfg.nodeTypes[cn.type]?.color ?? '#a0a0a0';
       if (live) live.remove();
       const g = document.createElementNS(NS, 'g');
       g.appendChild(mkSvg('path', {d:bz(fp.x,fp.y,w.x,w.y), fill:'none', stroke:col, 'stroke-width':'1.5', 'stroke-dasharray':'6 3', opacity:'.55'}));
@@ -1288,7 +1305,7 @@ function buildRulesTable() {
       const [r,g,b]=[1,3,5].map(i=>parseInt(cc.color.slice(i,i+2),16));
       const bg=on?`rgba(${r},${g},${b},.15)`:'rgba(255,255,255,.02)';
       h+=`<td class="rcl"><button class="rbtn" data-pk="${pk}" data-ck="${ck}"
-        style="background:${bg};color:${on?cc.color:'#1a2540'}">${on?'✓':'·'}</button></td>`;
+        style="background:${bg};color:${on?cc.color:'#2e2e2e'}">${on?'✓':'·'}</button></td>`;
     }
     h+=`</tr>`;
   }
