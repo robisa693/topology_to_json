@@ -209,6 +209,7 @@ state = AppState()
 
 api = FastAPI(title="Topology Builder")
 
+api.mount("/static", StaticFiles(directory="static"), name="static")
 
 @api.get("/", response_class=HTMLResponse)
 def index():

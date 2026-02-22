@@ -5,6 +5,9 @@
 <title>Topology Builder</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<!-- <link rel="icon" href="/static/favicon.ico"> -->
+<link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+
 <style>
 /*─────────────────────────────────────────────────────────────────────────────
   RESET & TOKENS
@@ -45,7 +48,7 @@ input, select { font-family: var(--font); }
 }
 #pal-logo { padding: 12px 12px 10px; border-bottom: 1px solid var(--c-border); }
 #logo-icon { margin-bottom: 8px; }
-#logo-icon svg { display: block; }
+#logo-icon img { display: block; }
 #pal-logo .name {
   font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 12px; letter-spacing: .06em;
   background: linear-gradient(135deg,#d8d8d8,#888888);
@@ -383,21 +386,12 @@ input, select { font-family: var(--font); }
   <!--════════════ PALETTE ════════════-->
   <div id="palette">
     <div id="pal-logo">
-      <div id="logo-icon"><svg id="app-logo-svg" width="34" height="30" viewBox="0 0 34 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- edges first so nodes render on top -->
-  <line x1="17" y1="9.5" x2="5.5" y2="20.5" stroke="#3c3c3c" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="17" y1="9.5" x2="28.5" y2="20.5" stroke="#3c3c3c" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="9"  y1="25" x2="25"  y2="25" stroke="#303030" stroke-width="1.2" stroke-dasharray="2.5 2" stroke-linecap="round"/>
-  <!-- top node -->
-  <circle cx="17" cy="5.5" r="4" fill="#1e1e1e" stroke="#787878" stroke-width="1.5"/>
-  <circle cx="17" cy="5.5" r="1.5" fill="#909090"/>
-  <!-- bottom-left node -->
-  <circle cx="5.5" cy="24.5" r="4" fill="#1a1a1a" stroke="#565656" stroke-width="1.5"/>
-  <circle cx="5.5" cy="24.5" r="1.5" fill="#686868"/>
-  <!-- bottom-right node -->
-  <circle cx="28.5" cy="24.5" r="4" fill="#1a1a1a" stroke="#565656" stroke-width="1.5"/>
-  <circle cx="28.5" cy="24.5" r="1.5" fill="#686868"/>
-</svg></div>
+      <div id="logo-icon"><img
+    src="static/logo.svg"
+    width="34"
+    height="30"
+    alt="logo"
+  ></div>
       <div class="name">TOPOLOGY</div>
       <div class="sub">JSON BUILDER</div>
     </div>

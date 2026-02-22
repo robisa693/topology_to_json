@@ -1,0 +1,11 @@
+<svg id="app-logo-svg" width="34" height="30" viewBox="0 0 34 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <line x1="17" y1="9.5" x2="5.5" y2="20.5" stroke="#3c3c3c" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="17" y1="9.5" x2="28.5" y2="20.5" stroke="#3c3c3c" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="9"  y1="25" x2="25"  y2="25" stroke="#303030" stroke-width="1.2" stroke-dasharray="2.5 2" stroke-linecap="round"/>
+  <circle cx="17" cy="5.5" r="4" fill="#1e1e1e" stroke="#787878" stroke-width="1.5"/>
+  <circle cx="17" cy="5.5" r="1.5" fill="#909090"/>
+  <circle cx="5.5" cy="24.5" r="4" fill="#1a1a1a" stroke="#565656" stroke-width="1.5"/>
+  <circle cx="5.5" cy="24.5" r="1.5" fill="#686868"/>
+  <circle cx="28.5" cy="24.5" r="4" fill="#1a1a1a" stroke="#565656" stroke-width="1.5"/>
+  <circle cx="28.5" cy="24.5" r="1.5" fill="#686868"/>
+</svg>
